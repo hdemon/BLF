@@ -1,5 +1,7 @@
 # Blf
 
+詰め込み問題のBLF法の実装
+
 TODO: Write a gem description
 
 ## Installation
