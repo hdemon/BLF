@@ -12,8 +12,13 @@ class Block
   def draw
     dr = Draw.new
     dr.stroke = "#ccddff"
+    dr.fill = "rgb(#{random*255}, #{random*255}, #{random*255})"
     dr.stroke_width 1
     dr.rectangle @start_x, @start_y, @end_x, @end_y
     dr.draw @world.image
+  end
+
+  def random
+    Random.new(Random.new_seed).rand
   end
 end

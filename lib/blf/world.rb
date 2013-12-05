@@ -12,6 +12,10 @@ class World
   end
 
   def add_block(args)
+    @blocks << Block.new(width: args[:width], height: args[:height], world: self)
+  end
+
+  def add_block_with_location(args)
     @blocks << Block.new(start_x: args[:start_x], start_y: args[:start_y], 
                          width: args[:width], height: args[:height], world: self)
   end
