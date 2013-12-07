@@ -2,7 +2,7 @@
 
 詰め込み問題のBLF法の実装
 
-This is an implementation of Bottom-Left method to 2-Dimensional Strip Packing Problem.
+This is an implementation of Bottom-Left method for 2-Dimensional Strip Packing Problem.
 
 ![](http://gyazo.com/1b8b7db3ee0c3aa859e61996a9f51bc0.png)
 
