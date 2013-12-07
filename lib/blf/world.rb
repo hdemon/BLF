@@ -1,5 +1,4 @@
 require 'rmagick'
-require 'pry'
 include Magick
 
 class World

@@ -32,24 +32,3 @@ class Block
     Random.new(Random.new_seed).rand
   end
 end
-
-
-class HorizontalBorder < Block
-  def initialize(args)
-    @start_x = 0
-    @start_y = 0
-    @world = args[:world]
-    @width = @world.width
-    @height = 0
-  end
-end
-
-class VerticalBorder < Block
-  def initialize(args)
-    @start_x = 0
-    @start_y = 0
-    @world = args[:world]
-    @width = 0
-    @height = @world.height
-  end
-end
