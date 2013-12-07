@@ -4,6 +4,8 @@
 
 This is an implementation of Bottom-Left method to 2-Dimensional Strip Packing Problem.
 
+![](http://gyazo.com/1b8b7db3ee0c3aa859e61996a9f51bc0.png)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 $LOAD_PATH.push('./lib')
 require "./lib/blf"
 
