@@ -1,5 +1,4 @@
-$LOAD_PATH.push('./lib')
-require "./lib/blf"
+require "blf"
 
 # create the world.
 world = BLF.create_world width: 500, height: 500
