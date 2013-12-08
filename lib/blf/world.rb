@@ -1,6 +1,7 @@
 require 'rmagick'
 include Magick
 
+
 module BLF
   class World
     attr_reader :width, :height, :blocks, :image, :bl_stable_point_list, :unplaced_blocks, :placed_blocks
@@ -44,14 +45,14 @@ module BLF
 
     def allocate new_block
       @bl_stable_point_list.each do |point|
-        if stable? point, new_block
-          unless overlapped?(start_x: point[:x], start_y: point[:y], width: new_block.width, height: new_block.height) ||
-                 beyond_area?(start_x: point[:x], start_y: point[:y], width: new_block.width, height: new_block.height)
-            new_block.start_x = point[:x]
-            new_block.start_y = point[:y]
-            @placed_blocks << new_block
-            break
-          end
+        if stable?(point, new_block) &&
+           !overlapped?(start_x: point[:x], start_y: point[:y], width: new_block.width, height: new_block.height) &&
+           !beyond_area?(start_x: point[:x], start_y: point[:y], width: new_block.width, height: new_block.height)
+
+          new_block.start_x = point[:x]
+          new_block.start_y = point[:y]
+          @placed_blocks << new_block
+          break
         end
       end
     end
@@ -65,7 +66,7 @@ module BLF
       end
 
       @unplaced_blocks.length.times do
-        # BL候補点の配列の順番通りに配置を試すので、Bottom-Leftの規則に沿って、yが少ない順に並べ替える。
+        # BL候補点の配列の順番通りに配置を試すので、Bottom-Leftの規則に沿って、yが小さい順に並べ替える。
         @bl_stable_point_list.sort! {|a, b| a[:y] <=> b[:y] }
 
         block = @unplaced_blocks.shift
@@ -110,10 +111,8 @@ module BLF
        self.background_color = 'white'
       end
 
-      # draw placed blocks
       @placed_blocks.each {|block| block.draw }
 
-      # draw bl stable points
       @bl_stable_point_list.compact.each do |point|
         dr = Draw.new
         dr.fill = "black"
