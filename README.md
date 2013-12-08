@@ -4,7 +4,7 @@
 
 This is an implementation of Bottom-Left method for 2-Dimensional Strip Packing Problem.
 
-![](http://gyazo.com/1b8b7db3ee0c3aa859e61996a9f51bc0.png)
+![](http://gyazo.com/38062420487fef5bf18d86d7165586d0.png)
 
 ## Installation
 
