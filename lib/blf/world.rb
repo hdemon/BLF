@@ -3,7 +3,7 @@ include Magick
 
 module BLF
   class World
-    attr_reader :width, :height, :blocks, :image, :bl_stable_point_list
+    attr_reader :width, :height, :blocks, :image, :bl_stable_point_list, :unplaced_blocks, :placed_blocks
 
     def initialize(args)
       @width = args[:width]

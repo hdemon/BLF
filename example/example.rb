@@ -1,4 +1,5 @@
 require "blf"
+require "pp"
 
 # create the world.
 world = BLF.create_world width: 500, height: 500
@@ -15,5 +16,8 @@ end
 
 # do allocation to all the blocks without coordinates.
 world.allocate_all
+
+# `world.placed_blocks` return the coordinates of the allocated blocks.
+pp world.placed_blocks[0]
 
 world.draw
