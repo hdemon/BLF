@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Blf::VERSION
   spec.authors       = ["Masami Yonehara"]
   spec.email         = ["zeitdiebe@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{This is an implementation of Bottom-Left method to 2-Dimensional Strip Packing Problem.}
+  spec.summary       = %q{This is an implementation of Bottom-Left method to 2-Dimensional Strip Packing Problem.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
