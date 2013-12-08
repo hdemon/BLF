@@ -60,6 +60,10 @@ module BLF
       # 左上端をブロックの組み合わせごとに追加するのは無駄なので、ここで一回だけ追加する。
       @bl_stable_point_list << { x: 0, y: 0, width: 0, height: 0 }
 
+      @placed_blocks.each do |block|
+        add_bl_stable_point_candidates block
+      end
+
       @unplaced_blocks.length.times do
         # BL候補点の配列の順番通りに配置を試すので、Bottom-Leftの規則に沿って、yが少ない順に並べ替える。
         @bl_stable_point_list.sort! {|a, b| a[:y] <=> b[:y] }
